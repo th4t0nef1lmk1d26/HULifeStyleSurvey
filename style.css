@@ -1,0 +1,26 @@
+/*
+style.css
+demonstrates basic CSS rules
+*/
+
+h1 {
+ font-family: Arial, "Comic Sans MS", sans-serif;
+ color: #15BB15;
+}
+
+p {
+ color:black;
+ font-size:14pt;
+}
+ol {
+ list-style: upper-roman;
+ color: #eb3434;
+}
+
+body {
+ background-color:#DFDFDF;
+}
+
+header {
+ text-align: center;
+}

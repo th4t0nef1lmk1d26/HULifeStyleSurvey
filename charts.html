@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Project 03 - HU Lifestyle Survey</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h3><a href="index.html">Home Page</a> - <a href="analysis.html">Analysis Page</a> - <a href="charts.html">Charts Page</a> - <a href="results.html">Results Page</a></h3>
+    </header>
+
+    <p><a href="Charts2.html">NEW CHART</a></p>
+    
+    <h1>HU Lifestyle Survey</h1>   
+
+    <div style="width: 1000px; max-width: 50%;">
+        <canvas id="StepBar"></canvas>
+    </div>
+	
+	<div style="width: 2000px; max-width: 50%;">
+        <canvas id="Graph2"></canvas>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+    const ctx = document.getElementById('StepBar');
+
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+        labels: ['Baker', 'Roush', 'Miller/Meadows', 'Wright', 'Hardy', 'Livingston', 'Commuters'],
+        datasets: [
+			{
+            label: 'Average Steps',
+            data: [7400, 6062.5, 9177.5, 8925.21, 13500, 5000, 9320],
+            borderWidth: 1,
+			stack: 'Stack 0',
+			},
+			{
+			label: 'Min',
+            data: [3500, 3000, 8355, 2000, 10000, 2000, 5600],
+            borderWidth: 1,
+			stack: 'Stack 1',
+			},
+            {
+			label: 'Max',
+            data: [13000, 10000, 10000, 25000, 17000, 10000, 14000],
+            borderWidth: 1,
+			stack: 'Stack 2',
+			}
+		
+		]
+        },
+    });
+    </script>
+</body>
+</html>
