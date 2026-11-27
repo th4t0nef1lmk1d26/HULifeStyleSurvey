@@ -24,3 +24,8 @@ body {
 header {
  text-align: center;
 }
+
+ul {
+ color:black;
+ font-size:14pt;
+}

@@ -10,17 +10,24 @@
     <header>
         <h3><a href="index.html">Home Page</a> - <a href="analysis.html">Analysis Page</a> - <a href="charts.html">Charts Page</a> - <a href="results.html">Results Page</a></h3>
     </header>
-
-    <p><a href="Charts2.html">NEW CHART</a></p>
     
     <h1>HU Lifestyle Survey</h1>   
 
-    <div style="width: 1000px; max-width: 50%;">
+    <h2 style="text-align: center;">Stepcount Across Different Halls</h2>
+    <div style="width: 1000px; max-width: 75%; margin: auto;">
         <canvas id="StepBar"></canvas>
     </div>
 	
-	<div style="width: 2000px; max-width: 50%;">
-        <canvas id="Graph2"></canvas>
+    <h2 style="text-align: center;">Wright Hall: Event Participation</h2>
+
+	<div style="width: 750px; max-width: 75%; margin: auto;">
+        <canvas id="EventPie"></canvas>
+    </div>
+
+    <h2 style="text-align: center;">Baker Hall: Event Participation</h2>
+
+	<div style="width: 750px; max-width: 75%; margin: auto;">
+        <canvas id="EventPie2"></canvas>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -55,6 +62,47 @@
 		]
         },
     });
+    </script>
+
+    <script>
+    //chart2
+    const ctx2 = document.getElementById('EventPie').getContext('2d')
+    const data2 = {
+        labels: ['I attend every event!', 'I attend most events.', 'I pick and choose my events.', 'I don\'t often attend events.'],
+        datasets: [{
+            label: '# of Students',
+            data: [5, 6, 1, 2],
+        }]
+    }
+    const options2 = {
+        }
+
+    const EventPie = new Chart(ctx2, {
+    type: 'doughnut',
+    data: data2,
+    options: options2
+    })
+    </script>
+
+
+    <script>
+    //chart3
+    const ctx3 = document.getElementById('EventPie2').getContext('2d')
+    const data3 = {
+        labels: ['I attend every event!', 'I attend most events.', 'I pick and choose my events.', 'I don\'t often attend events.'],
+        datasets: [{
+            label: '# of Students',
+            data: [1, 5, 0, 1],
+        }]
+    }
+    const options3 = {
+        }
+
+    const EventPie2 = new Chart(ctx3, {
+    type: 'doughnut',
+    data: data3,
+    options: options3
+    })
     </script>
 </body>
 </html>

@@ -6,63 +6,28 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    <h1>HU Lifestyle Survey</h1>
 
     <header>
         <h3><a href="index.html">Home Page</a> - <a href="analysis.html">Analysis Page</a> - <a href="charts.html">Charts Page</a> - <a href="results.html">Results Page</a></h3>
     </header>
 
+    <h1>HU Lifestyle Survey</h1>
 
+    <h2>Results & Limitaitons</h2>
 
-    <div style="width: 450px; max-width: 100%;">
-        <canvas id="majorChart"></canvas>
-    </div>
+    <p>First, there were several limitations my survey encountered.</p>
+    <ul>
+        <li>The survey was only spread through my phone and through the moodle page, meaning that wherever I am is likely where the survey takers also are often; questions like "Where do you study most?" are going to be biased in their answers.</li>
+        <li>I should have included which floor of which hall you are on, since different floors seem to have vastly different lifestyles here on campus.</li>
+        <li>Some floors simply recieved more answers than others, providing less than ideal test results.</li>
+    </ul>
 
-    <!-- Load Chart.js and DataLabels plugin -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
+    <p>My findings were largely inconclusive, but there were some fun observations to collect.</p>
+    <p>Firstly, as you probably noticed on the stepcount graph, there were some big outliers whenever I let users input their own answers. I decided I had to clean up some of the data because someone inputed "200 steps a day" and someone else inputed "81730", which was more than likely not accurate. </p>
+    <p>Aside from that, event participation seems consistant among most halls while the average step count seems to have some patterns. Sister halls Baker and Roush have a similar and lower average than other halls, likely due to them being closer to classes and having a more secluded style (50% of Roush responders prefer to study in their rooms, and 57% of Baker prefers their room or the quiet space of the library).</p>
 
-    <script>
-        Chart.register(ChartDataLabels);
+    <h2>Conclusion</h2>
 
-        const ctx = document.getElementById('majorChart');
-
-        new Chart(ctx, {
-            type: 'pie',
-            data: {
-                labels: ['Business', 'CS', 'DMA', 'Math'],
-                datasets: [{
-                    data: [2, 7, 6, 4],
-                    backgroundColor: [
-                        'tomato',
-                        'steelblue',
-                        'gold',
-                        'mediumseagreen'
-                    ]
-                }]
-            },
-            options: {
-                plugins: {
-                    legend: {
-                        position: 'bottom'
-                    },
-                    datalabels: {
-                        color: 'black',
-                        font: {
-                            weight: 'bold',
-                            size: 13
-                        },
-                        formatter: (value, context) => {
-                            const data = context.dataset.data;
-                            const total = data.reduce((a, b) => a + b, 0);
-                            const percent = (value / total * 100).toFixed(1);
-                            const label = context.chart.data.labels[context.dataIndex];
-                            return label + '\n' + percent + '%';
-                        }
-                    }
-                }
-            }
-        });
-    </script>
+    <p>Overall, while there are definitely similarites between dorms I believe it is ultimately a student's major which determines their lifestyle and the people they relate to. The people they relate to are then likely to be their dormmates and share the same lifestyle.</p>
 </body>
 </html>
